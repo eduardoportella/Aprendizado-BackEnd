@@ -2,16 +2,16 @@
 #include <time.h>
 #include <stdlib.h>
 #define M 8  // pares de cartas
-#define n 4  // tabuleiro 4x4 que armazena 16 cartas
+#define N 4  // tabuleiro 4x4 que armazena 16 cartas
 
-char tab[n][n];
+char Tab[N][N];
 char cartas[M] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'};
 
-void criaTab() {
-	int i, j, cont, x;
+void inicia_tab() {
+	int x, cont, i, j;
 	
-	for(i=0; i<n; i++)
-	  for(j=0; j<n; j++) tab[i][j]= 'Z';
+	for(i=0; i<N; i++)
+	  for(j=0; j<N; j++) Tab[i][j]= 'Z';
 	
 	srand(time(NULL));
     x=0;
@@ -19,8 +19,8 @@ void criaTab() {
 	while (x<M){  // para cada elemento em V
 		i=rand() % 4;
 		j=rand() % 4;
-		if (tab[i][j] == 'Z') {
-		   tab[i][j] = cartas[x];
+		if (Tab[i][j] == 'Z') {
+		   Tab[i][j] = cartas[x];
 		   cont++;
 	    }
 		if (cont > 1) {
@@ -33,15 +33,17 @@ void criaTab() {
 void mostra_tab() {
 	int i, j;
 	printf(" ----  Tabuleiro do Jogo  -----\n\n");
-	for(i=0; i<n; i++) {
-	  for(j=0; j<n; j++) 
-	      printf ("%c  ", tab[i][j]);
+	for(i=0; i<N; i++) {
+	  for(j=0; j<N; j++) 
+	      printf ("%c  ", Tab[i][j]);
 	  printf("\n");
     }
 }
 
 int main() {
-	criaTab();
+	inicia_tab();
 	mostra_tab();
     return 0;	
 }
+
+
