@@ -1,4 +1,4 @@
-import p
+import pygame
 pygame.mixer.init()
 pygame.mixer.music.load('SAY POZE - LEOD.mp3')
 pygame.mixer.music.play()
