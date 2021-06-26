@@ -14,7 +14,7 @@ app.get("/blog", function(req, res){
 })
 
 app.get("/ola/:nome/:cargo/:cor", function(req, res){
-    res.send("<h1>Oi, " + req.params.nome + "</h1>"+ "<h2> Seu cargo e: " + req.params.cargo + "</h2>" +"<h3> Sua cor favorita e: "+ req.params.cor + "<h3>")
+    res.send("<h1>Oi, " + req.params.nome + "</h1>"+ "<h2> Seu cargo e: " + req.params.cargo + "</h2>" +"<h3> Sua cor favorita e: "+ req.params.cor + "</h3>")
 })
 
 app.listen(9090, function () {
