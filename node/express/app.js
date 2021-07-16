@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 
 app.get("/", function(req, res){
-    res.send("Seja bem vindo ao meu app")
+    // res.send("Seja bem vindo ao meu app")
+    res.sendFile(__dirname + '/html/index.html'); //DIRNAME (directory name), pega a pasta onde esta o arquivo
 })
 
 app.get("/sobre", function(req, res){
-    res.send("Seja bem vindo a minha pagina sobre")
+    // res.send("Seja bem vindo a minha pagina sobre")
+    res.sendFile(__dirname + "/html/sobre.html");
 })
 
 app.get("/blog", function(req, res){
